@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mwayi — Malawi Opportunity Hub</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#f3f7fb;color:#12345b;font-family:Arial,sans-serif}
+.app{max-width:540px;margin:auto;background:#fff;min-height:100vh}
+header{padding:16px 17px;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:29px;font-weight:800;color:#0875df}
+.tag{font-size:12px;color:#6b8099}
+.menu{font-size:25px;color:#0875df}
+.hero{padding:25px 17px 35px;background:linear-gradient(135deg,#0875df,#0b9b7e);color:#fff;border-radius:0 0 25px 25px}
+.hero h1{font-size:27px;margin:0 0 7px}
+.hero p{margin:0 0 17px}
+.search{background:#fff;padding:12px;border-radius:15px}
+.search input{width:100%;border:1px solid #d8e3ef;border-radius:9px;padding:12px;font-size:14px}
+.btn{border:0;border-radius:10px;padding:12px 14px;font-weight:800;cursor:pointer}
+.green{background:#08a56b;color:#fff;width:100%;margin-top:10px}
+section{padding:18px 16px}
+.head{display:flex;justify-content:space-between;align-items:center}
+.head h2{font-size:18px;margin:0 0 12px}
+.link{color:#0875df;font-size:12px;cursor:pointer}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tile{padding:15px 4px;border-radius:13px;text-align:center;font-weight:700;font-size:12px;background:#eaf4ff;cursor:pointer}
+.tile:nth-child(2){background:#f4edff}
+.tile:nth-child(3){background:#ebfaef}
+.tile:nth-child(4){background:#fff6d9}
+.tile:nth-child(5){background:#eaf0ff}
+.tile:nth-child(6){background:#ffecef}
+.tile b{display:block;font-size:22px;margin-bottom:5px}
+.card{border:1px solid #dbe6f1;border-radius:14px;padding:13px;margin:9px 0;box-shadow:0 2px 8px #173d5b10}
+.row{display:flex;gap:10px}
+.icon{width:43px;height:43px;border-radius:11px;background:#eaf4ff;display:grid;place-items:center;font-size:21px;flex:none}
+.card h3{margin:0 0 3px;font-size:16px}
+.muted{font-size:12px;color:#687e98;margin:3px 0}
+.chips{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.chip{background:#e8faef;color:#087d50;border-radius:20px;padding:5px 8px;font-size:11px}
+.actions{display:flex;justify-content:flex-end;gap:7px;margin-top:10px}
+.blue{background:#0875df;color:#fff}
+.light{background:#eef5fc;color:#0875df}
+.save{font-size:20px;border:0;background:none;color:#778ba2}
+.saved{color:#e39a00}
+.source{font-size:10px;color:#6e8198;margin-top:7px}
+.source a{color:#0875df}
+.page{display:none}
+.page.active{display:block}
+.top{background:#0875df;color:white;padding:17px;display:flex;gap:13px;align-items:center}
+.top button{background:none;border:0;color:#fff;font-size:27px}
+.top h1{margin:0;font-size:21px}
+.form{padding:16px}
+.input,.select{width:100%;padding:13px;border:1px solid #d4e1ee;border-radius:10px;margin-bottom:9px;font-size:14px}
+.profile{margin:0 16px 10px;padding:13px;background:#eaf4ff;border-radius:12px;font-size:13px}
+.profile button{float:right;padding:8px}
+.notice{padding:12px;background:#fff7df;border-left:4px solid #f0ae00;border-radius:8px;font-size:12px;color:#665016;margin-bottom:10px}
+nav{position:sticky;bottom:0;background:#fff;border-top:1px solid #dce6f0;display:grid;grid-template-columns:repeat(4,1fr);padding:8px 0;z-index:5}
+nav button{border:0;background:none;color:#70849b;font-size:11px}
+nav button.active{color:#0875df;font-weight:800}
+nav i{display:block;font-style:normal;font-size:21px;margin-bottom:3px}
+.empty{text-align:center;padding:30px;color:#71849b}
+</style>
+</head>
+<body>
+<div class="app">
+
+<div id="home" class="page active">
+<header>
+<div>
+<div class="logo">Mwayi</div>
+<div class="tag">Your Opportunity Hub</div>
+</div>
+<div class="menu">☰</div>
+</header>
+
+<div class="hero">
+<h1>Find your next opportunity</h1>
+<p>Jobs • Training • Scholarships • More</p>
+<div class="search">
+<input id="homeQ" placeholder="Search jobs or skills...">
+<button class="btn green" onclick="goJobs()">⌕ FIND OPPORTUNITIES</button>
+</div>
+</div>
+
+<section>
+<div class="head"><h2>Explore</h2></div>
+<div class="grid">
+<div class="tile" onclick="goJobs()"><b>💼</b>Jobs</div>
+<div class="tile"><b>🎓</b>Training</div>
+<div class="tile"><b>📚</b>Scholarships</div>
+<div class="tile"><b>🛠️</b>Skills</div>
+<div class="tile"><b>👥</b>Internships</div>
+<div class="tile"><b>📈</b>More</div>
+</div>
+</section>
+
+<section>
+<div class="head">
+<h2>Job Sources</h2>
+<span class="link" onclick="goJobs()">View jobs</span>
+</div>
+
+<div class="card">
+<b>CareerAd Malawi</b>
+<div class="muted">Active Malawi vacancies across sectors.</div>
+<div class="source">External source • <a href="https://careeradmw.com/jobs" target="_blank">Open source</a></div>
+</div>
+
+<div class="card">
+<b>Careers Malawi</b>
+<div class="muted">Jobs and opportunities from Malawi employers.</div>
+<div class="source">External source • <a href="https://careersmw.com/job-listing/" target="_blank">Open source</a></div>
+</div>
+
+<div class="card">
+<b>MalawiJob</b>
+<div class="muted">Vacancies by region and sector.</div>
+<div class="source">External source • <a href="https://www.malawijob.com/" target="_blank">Open source</a></div>
+</div>
+
+<div class="card">
+<b>Job Centre Malawi</b>
+<div class="muted">Jobs, profiles and employer recruitment.</div>
+<div class="source">External source • <a href="https://www.jobcentre.mw/" target="_blank">Open source</a></div>
+</div>
+</section>
+</div>
+
+<div id="jobs" class="page">
+<div class="top">
+<button onclick="show('home')">‹</button>
+<h1>Mwayi Jobs</h1>
+</div>
+
+<div class="form">
+<input id="q" class="input" placeholder="Search job title, skill or company">
+
+<select id="loc" class="select">
+<option>All Malawi</option>
+<option>Blantyre</option>
+<option>Lilongwe</option>
+<option>Ndirande</option>
+<option>Mzuzu</option>
+<option>Zomba</option>
+</select>
+
+<select id="source" class="select">
+<option>All sources</option>
+<option>CareerAd Malawi</option>
+<option>Careers Malawi</option>
+<option>MalawiJob</option>
+<option>Job Centre Malawi</option>
+</select>
+
+<button class="btn blue" style="width:100%" onclick="render()">SEARCH</button>
+</div>
+
+<div class="notice">
+ℹ️ Mwayi currently links to the original source for applications. We do not collect application fees.
+</div>
+
+<section>
+<div class="head">
+<h2 id="count">Opportunities</h2>
+<span class="link" onclick="showSaved()">♡ Saved</span>
+</div>
+<div id="list"></div>
+</section>
+</div>
+
+<div id="saved" class="page">
+<div class="top">
+<button onclick="show('home')">‹</button>
+<h1>Saved Jobs</h1>
+</div>
+<section>
+<div id="savedList"></div>
+</section>
+</div>
+
+<nav>
+<button id="nh" class="active" onclick="show('home')"><i>⌂</i>Home</button>
+<button id="nj" onclick="goJobs()"><i>⌕</i>Jobs</button>
+<button id="ns" onclick="showSaved()"><i>♡</i>Saved</button>
+<button id="np" onclick="alert('Profile and CV tools are next in the build.')"><i>♙</i>Profile</button>
+</nav>
+
+</div>
+
+<script>
+const jobs=[
+{t:"Assistant Inventory Clerk",c:"Bespat Enterprise",l:"Lilongwe",s:"CareerAd Malawi",d:"2026-10-05",e:"Apply on source",u:"https://careeradmw.com/jobs"},
+{t:"Deputy Director-Technical & Drafting",c:"Malawi Revenue Authority",l:"Blantyre",s:"CareerAd Malawi",d:"2026-10-05",e:"Apply on source",u:"https://careeradmw.com/jobs"},
+{t:"Legal Clerk",c:"Malawi Revenue Authority",l:"Blantyre",s:"CareerAd Malawi",d:"2026-10-05",e:"Apply on source",u:"https://careeradmw.com/jobs"},
+{t:"Club Manager",c:"Nkhanga Essential Support Services",l:"Chikwawa",s:"CareerAd Malawi",d:"2026-10-05",e:"Apply on source",u:"https://careeradmw.com/jobs"},
+{t:"Various Academic Positions",c:"Workforce Recruitment Services",l:"Lilongwe",s:"CareerAd Malawi",d:"2026-10-05",e:"Apply on source",u:"https://careeradmw.com/jobs"},
+{t:"Science Teacher",c:"Omar Farooq Trust",l:"Mpingwe, Limbe",s:"Careers Malawi",d:"2026-09-29",e:"See listing",u:"https://careersmw.com/job-listing/"},
+{t:"Driver (6 Positions)",c:"UNICEF",l:"Lilongwe",s:"Careers Malawi",d:"2026-09-30",e:"See listing",u:"https://careersmw.com/job-listing/"},
+{t:"In-Country Grants Officer",c:"AGRA",l:"Lilongwe",s:"Careers Malawi",d:"2026-09-30",e:"See listing",u:"https://careersmw.com/job-listing/"},
+{t:"Project Foreman – Agriculture",c:"Illovo Sugar (Malawi) plc",l:"Nchalo",s:"Careers Malawi",d:"2026-09-28",e:"See listing",u:"https://careersmw.com/job-listing/"},
+{t:"Procurement Manager",c:"Connect Africa",l:"Lilongwe",s:"MalawiJob",d:"2026-10-02",e:"See listing",u:"https://www.malawijob.com/"},
+{t:"Face Motion Video Collector",c:"Focus Data Analysis",l:"Remote",s:"MalawiJob",d:"2026-10-02",e:"See listing",u:"https://www.malawijob.com/"},
+{t:"General Worker / Helper opportunities",c:"Job Centre Malawi",l:"Malawi & abroad",s:"Job Centre Malawi",d:"2026-10-01",e:"See listings",u:"https://www.jobcentre.mw/"}
+];
+
+let saved=JSON.parse(localStorage.getItem('mwayiSaved')||'[]');
+
+function card(j){
+let id=j.t+'|'+j.c,sv=saved.includes(id);
+return `<div class="card">
+<div class="row">
+<div class="icon">💼</div>
+<div>
+<h3>${j.t}</h3>
+<div class="muted">${j.c}</div>
+<div class="muted">📍 ${j.l}</div>
+</div>
+</div>
+<div class="chips">
+<span class="chip">🌐 ${j.s}</span>
+<span class="chip">📅 ${j.d}</span>
+</div>
+<div class="actions">
+<button class="save ${sv?'saved':''}" onclick="toggle('${id}')">${sv?'★':'♡'}</button>
+<a class="btn blue" href="${j.u}" target="_blank">VIEW / APPLY</a>
+</div>
+<div class="source">Mwayi sends you to the original source. Check requirements and deadline before applying.</div>
+</div>`
+}
+
+function render(){
+let q=(document.getElementById('q').value||'').toLowerCase(),
+l=document.getElementById('loc').value,
+s=document.getElementById('source').value;
+
+let a=jobs.filter(j=>
+(j.t+' '+j.c+' '+j.l).toLowerCase().includes(q)&&
+(l==='All Malawi'||j.l.includes(l))&&
+(s==='All sources'||j.s===s)
+);
+
+document.getElementById('count').textContent=a.length+' opportunities';
+
+document.getElementById('list').innerHTML=a.length?
+a.map(card).join(''):
+'<div class="empty">No matching opportunities in this demo feed.</div>'
+}
+
+function toggle(id){
+saved=saved.includes(id)?
+saved.filter(x=>x!==id):
+[...saved,id];
+
+localStorage.setItem('mwayiSaved',JSON.stringify(saved));
+render();
+
+if(document.getElementById('saved').classList.contains('active'))
+renderSaved()
+}
+
+function renderSaved(){
+let a=jobs.filter(j=>saved.includes(j.t+'|'+j.c));
+
+document.getElementById('savedList').innerHTML=a.length?
+a.map(card).join(''):
+'<div class="empty">No saved jobs yet.</div>'
+}
+
+function showSaved(){
+show('saved');
+renderSaved()
+}
+
+function show(id){
+document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+
+document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+
+({home:'nh',jobs:'nj',saved:'ns'}[id]&&
+document.getElementById({home:'nh',jobs:'nj',saved:'ns'}[id]).classList.add('active'));
+
+scrollTo(0,0);
+
+if(id==='jobs')render()
+}
+
+function goJobs(){
+show('jobs');
+document.getElementById('q').value=document.getElementById('homeQ').value;
+render()
+}
+
+render();
+</script>
+</body>
+</html>
