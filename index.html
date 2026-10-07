@@ -178,12 +178,31 @@ nav i{display:block;font-style:normal;font-size:21px;margin-bottom:3px}
 <div id="savedList"></div>
 </section>
 </div>
+<div id="profile" class="page">
+  <div class="top">
+    <button onclick="show('home')">←</button>
+    <h1>My Profile</h1>
+  </div>
 
+  <section class="profile">
+    <h2>Michael Elson</h2>
+    <p>Malawi Opportunity Seeker</p>
+
+    <p><strong>Education:</strong> MSCE</p>
+
+    <p><strong>Skills:</strong></p>
+    <p>Cleaning • Gardening • Construction • Shop Assistance</p>
+
+    <button class="green" onclick="alert('CV tools coming soon!')">
+      📄 My CV
+    </button>
+  </section>
+</div>
 <nav>
 <button id="nh" class="active" onclick="show('home')"><i>⌂</i>Home</button>
 <button id="nj" onclick="goJobs()"><i>⌕</i>Jobs</button>
 <button id="ns" onclick="showSaved()"><i>♡</i>Saved</button>
-<button id="np" onclick="alert('Profile and CV tools are next in the build.')"><i>♙</i>Profile</button>
+<button id="np" onclick=show('profile')
 </nav>
 
 </div>
