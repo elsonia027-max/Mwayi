@@ -193,7 +193,7 @@ nav i{display:block;font-style:normal;font-size:21px;margin-bottom:3px}
     <p><strong>Skills:</strong></p>
     <p>Cleaning • Gardening • Construction • Shop Assistance</p>
 
-    <button class="green" onclick="alert('CV tools coming soon!')">
+    <button class="green" onclick="openCV()">
       📄 My CV
     </button>
   </section>
@@ -310,6 +310,58 @@ show('jobs');
 document.getElementById('q').value=document.getElementById('homeQ').value;
 render()
 }
+function openCV() {
+  const cv = `
+    <h1>Michael Elson</h1>
+    <p>Malawi Opportunity Seeker</p>
+    <hr>
+    <h2>Education</h2>
+    <p>MSCE</p>
+    <h2>Skills</h2>
+    <p>Cleaning, Gardening, Construction, Shop Assistance</p>
+    <h2>Contact</h2>
+    <p>Email: elsonia027@gmail.com</p>
+    <p>Phone: +265984676681</p>
+  `;
+
+  const win = window.open("", "_blank");
+  if (!win) {
+    alert("Please allow pop-ups to open your CV.");
+    return;
+  }
+
+  win.document.write(`
+    <html>
+      <head>
+        <title>Michael Elson - CV</title>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+          }
+          button {
+            padding: 12px 20px;
+            background: green;
+            color: white;
+            border: none;
+            border-radius: 6px;
+          }
+          @media print {
+            button { display: none; }
+          }
+        </style>
+      </head>
+      <body>
+        ${cv}
+        <button onclick="window.print()">Download / Print CV</button>
+      </body>
+    </html>
+  `);
+  win.document.close();
+  }
 
 render();
 </script>
